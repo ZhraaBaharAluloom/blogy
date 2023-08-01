@@ -95,13 +95,14 @@ const md = new MarkdownIt({
 
 const blogStore = useBlogStore();
 
+const route = useRoute();
 const blogCards = ref([]);
 const sumStuck = ref(true);
 const blogId = ref(route.params.id);
+
 let summarization = ref(null);
 let blog = ref(null);
 
-const route = useRoute();
 const isLoading = computed(() => blogStore.isLoading);
 
 blogStore.fetchData.then((blogsData) => {
